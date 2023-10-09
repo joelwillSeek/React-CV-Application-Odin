@@ -1,0 +1,46 @@
+
+:root{
+--titlelocal-color: #b5b4b4;
+}
+
+div.cv{
+    justify-self: start;
+    align-self:self-start;
+    /* padding: 1rem; */
+    width: 100%;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(50px);
+    background: linear-gradient(135px, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0px rgba(0, 0, 0, 0.5);
+    margin: 2rem;
+    color: white;
+}
+
+div.cv div.listp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.cv p{
+margin:  1rem;
+}
+
+div.cv h1{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 3rem ;
+    background-color: var(--titlelocal-color);
+    height: 100%;
+    margin: 1rem 0;
+    padding: 1rem 0;
+    width: 100%;
+}
+
+div.cv h1.toper{
+    border-radius: 20px 20px 0px 0px;
+    margin: 0;
+    margin-bottom: 1rem;
+}

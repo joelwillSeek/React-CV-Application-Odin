@@ -1,35 +1,77 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import CV from "./components/CV";
+import FormInput from "./components/FormInput";
 
-function App() {
-  const [count, setCount] = useState(0)
+let App = () => {
+  let defaultValue = {
+    defaultPhone: "0944032128",
+    defaultEmail: "Joelthousend@gmail.com",
+    defaultAddress: "Addis Ababa, Ethiopia",
+    defaultName: "Eyoel Seleshi",
+    defaultEducationLevel: "Degree",
+    defaultEducationInstitution: "Unity",
+    defaultCompanyName: "ULT",
+    defaultPositionTitle: "junior Developer",
+    defaultLocation: "Addis Ababa",
+  };
+
+  let [email, setEmail] = useState(defaultValue.defaultEmail);
+  let [phone, setPhone] = useState(defaultValue.defaultPhone);
+  let [address, setAddress] = useState(defaultValue.defaultAddress);
+  let [positionTitle, setPositionTitle] = useState(
+    defaultValue.defaultPositionTitle
+  );
+  let [location, setLocation] = useState(defaultValue.defaultLocation);
+  let [companyName, setCompanyName] = useState(defaultValue.defaultCompanyName);
+  let [name, setName] = useState(defaultValue.defaultName);
+  let [educationLevel, setEducationLevel] = useState(
+    defaultValue.defaultEducationLevel
+  );
+  let [educationInstitution, setEducationInstitution] = useState(
+    defaultValue.defaultEducationInstitution
+  );
+
+  let setter = {
+    setEmail,
+    setPhone,
+    setAddress,
+    setEducationInstitution,
+    setEducationLevel,
+    setName,
+    setPositionTitle,
+    setLocation,
+    setCompanyName,
+  };
+
+  let getter = {
+    name,
+    companyName,
+    educationInstitution,
+    educationLevel,
+    positionTitle,
+    address,
+    email,
+    phone,
+    location,
+  };
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+      <FormInput getter={getter} setter={setter}></FormInput>
 
-export default App
+      <CV
+        email={email}
+        phone={phone}
+        address={address}
+        name={name}
+        educationLevel={educationLevel}
+        educationInstitution={educationInstitution}
+        companyName={companyName}
+        location={location}
+        positionTitle={positionTitle}
+      />
+    </>
+  );
+};
+
+export default App;
